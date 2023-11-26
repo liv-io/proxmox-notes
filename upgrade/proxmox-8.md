@@ -67,5 +67,5 @@ zpool list
 ## Logs
 
 ```
-grep -irE "fatal|emerg|alert|crit|err|warn|corrupt|fail" /var/log/syslog
+grep -irE "fatal|emerg|alert|crit|err|warn|corrupt|fail" /var/log/
 ```
