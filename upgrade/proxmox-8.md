@@ -31,7 +31,7 @@
 - Disable start-on-boot
 
   ```
-  for vm in $(qm list | grep 'running' | tr -s ' ' '#' | cut -d '#' -f2) ; do qm set ${vm} -onboot 0 ; done
+  for vm in $(qm list | tr -s ' ' '#' | cut -d '#' -f2) ; do qm set ${vm} -onboot 0 ; done
   ```
 
 - Update APT repositories
@@ -59,11 +59,12 @@
   reboot
   ```
 
-- Disable Proxmox enterprise repositories
+- Disable Proxmox enterprise and ceph repositories
 
   ```
   ls -l /etc/apt/sources.list.d/
-  sed -i 's@^deb @#deb @g' /etc/apt/sources.list.d/{ceph,pve-enterprise}.list
+  sed -i 's@^deb @#deb @g' /etc/apt/sources.list.d/*enterprise*
+  sed -i 's@^deb @#deb @g' /etc/apt/sources.list.d/*ceph*
   ```
 
 - Update APT cache
@@ -95,13 +96,13 @@
 - Enable start-on-boot
 
   ```
-  for vm in $(qm list | grep 'running' | tr -s ' ' '#' | cut -d '#' -f2) ; do qm set ${vm} -onboot 1; done
+  for vm in $(qm list | tr -s ' ' '#' | cut -d '#' -f2) ; do qm set ${vm} -onboot 1; done
   ```
 
 - Start virtual machines
 
   ```
-  for vm in $(qm list | grep 'running' | tr -s ' ' '#' | cut -d '#' -f2) ; do qm start ${vm} ; done
+  for vm in $(qm list | tr -s ' ' '#' | cut -d '#' -f2) ; do qm start ${vm} ; done
   qm list
   ```
 
