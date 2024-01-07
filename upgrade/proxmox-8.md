@@ -56,7 +56,13 @@
 - Reboot system
 
   ```
-  reboot
+  sleep 3 && reboot
+  ```
+
+- Start a `tmux` session in case of connectivity issues
+
+  ```
+  tmux
   ```
 
 - Disable Proxmox enterprise and ceph repositories
@@ -90,7 +96,13 @@
 - Reboot system
 
   ```
-  reboot
+  sleep 3 && reboot
+  ```
+
+- Start a `tmux` session in case of connectivity issues
+
+  ```
+  tmux
   ```
 
 - Enable start-on-boot
