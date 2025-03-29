@@ -24,7 +24,7 @@
 - Shutdown virtual machines
 
   ```
-  for vm in $(qm list | grep 'running' | tr -s ' ' '#' | cut -d '#' -f2) ; do qm shutdown ${vm} ; done
+  for vm in $(qm list | grep 'running' | tr -s ' ' '#' | cut -d '#' -f2) ; do timeout 1 qm shutdown ${vm} ; done
   qm list
   ```
 
