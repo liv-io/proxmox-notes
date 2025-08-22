@@ -32,7 +32,6 @@
   ```
   sed -i 's@bookworm@trixie@g' /etc/apt/sources.list
   sed -i 's@bookworm@trixie@g' /etc/apt/sources.list.d/proxmox.list
-  sed -i 's@^@#@g' /etc/apt/sources.list.d/pve-enterprise.sources
   ```
 
 - Update APT cache
@@ -65,6 +64,7 @@
   ls -l /etc/apt/sources.list.d/
   sed -i 's@^deb @#deb @g' /etc/apt/sources.list.d/*enterprise*
   sed -i 's@^deb @#deb @g' /etc/apt/sources.list.d/*ceph*
+  sed -i 's@^@#@g' /etc/apt/sources.list.d/pve-enterprise.sources
   ```
 
 - Update APT cache
