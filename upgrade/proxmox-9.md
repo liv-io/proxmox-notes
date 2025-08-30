@@ -43,7 +43,7 @@
 - Run APT upgrade
 
   ```
-  DEBIAN_FRONTEND=noninteractive apt -o Dpkg::Options::=--force-confold -o Dpkg::Options::=--force-confdef -y --allow-downgrades --allow-remove-essential --allow-change-held-packages dist-upgrade
+  DEBIAN_FRONTEND=noninteractive apt -o Dpkg::Options::=--force-confold -o Dpkg::Options::=--force-confdef -y dist-upgrade
   ```
 
 - Reboot system
@@ -71,6 +71,11 @@
 
   ```
   apt update
+
+- Remove unused packages
+
+  ```
+  apt autoremove --purge
   ```
 
 - Upgrade ZFS pools
